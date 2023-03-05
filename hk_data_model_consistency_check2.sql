@@ -614,45 +614,6 @@ where md5(
 		) 
 ; -- 0
 
-
-
----- DONE:
-ALTER TABLE map_hk.midland_rent_txn__map ADD CONSTRAINT midland_rent_txn__map_fk_activity_dwid FOREIGN KEY (activity_dwid) REFERENCES masterdata_hk.rent_transaction(activity_dwid);
-ALTER TABLE map_hk.midland_rent_txn__map ADD CONSTRAINT midland_rent_txn__map_fk_address_dwid FOREIGN KEY (address_dwid) REFERENCES masterdata_hk.address(address_dwid);
-ALTER TABLE map_hk.midland_rent_txn__map ADD CONSTRAINT midland_rent_txn__map_fk_building_dwid FOREIGN KEY (building_dwid) REFERENCES masterdata_hk.building(building_dwid);
-ALTER TABLE map_hk.midland_rent_txn__map ADD CONSTRAINT midland_rent_txn__map_fk_project_dwid FOREIGN KEY (project_dwid) REFERENCES masterdata_hk.project(project_dwid);
-ALTER TABLE map_hk.midland_rent_txn__map ADD CONSTRAINT midland_rent_txn__map_fk_property_dwid FOREIGN KEY (property_dwid) REFERENCES masterdata_hk.property(property_dwid);
-CREATE INDEX midland_rent_txn__map_activity_dwid_idx ON map_hk.midland_rent_txn__map USING btree (activity_dwid);
-CREATE INDEX midland_rent_txn__map_address_dwid_idx ON map_hk.midland_rent_txn__map USING btree (address_dwid);
-CREATE INDEX midland_rent_txn__map_building_dwid_idx ON map_hk.midland_rent_txn__map USING btree (building_dwid);
-CREATE INDEX midland_rent_txn__map_project_dwid_idx ON map_hk.midland_rent_txn__map USING btree (project_dwid);
-CREATE INDEX midland_rent_txn__map_property_dwid_idx ON map_hk.midland_rent_txn__map USING btree (property_dwid);
-
-
-ALTER TABLE map_hk.midland_rent_listing__map ADD CONSTRAINT midland_rent_listing__map_fk_activity_dwid FOREIGN KEY (activity_dwid) REFERENCES masterdata_hk.rent_listing(activity_dwid);
-ALTER TABLE map_hk.midland_rent_listing__map ADD CONSTRAINT midland_rent_listing__map_fk_address_dwid FOREIGN KEY (address_dwid) REFERENCES masterdata_hk.address(address_dwid);
-ALTER TABLE map_hk.midland_rent_listing__map ADD CONSTRAINT midland_rent_listing__map_fk_building_dwid FOREIGN KEY (building_dwid) REFERENCES masterdata_hk.building(building_dwid);
-ALTER TABLE map_hk.midland_rent_listing__map ADD CONSTRAINT midland_rent_listing__map_fk_project_dwid FOREIGN KEY (project_dwid) REFERENCES masterdata_hk.project(project_dwid);
-ALTER TABLE map_hk.midland_rent_listing__map ADD CONSTRAINT midland_rent_listing__map_fk_property_dwid FOREIGN KEY (property_dwid) REFERENCES masterdata_hk.property(property_dwid);
-CREATE INDEX midland_rent_listing__map_activity_dwid_idx ON map_hk.midland_rent_listing__map USING btree (activity_dwid);
-CREATE INDEX midland_rent_listing__map_address_dwid_idx ON map_hk.midland_rent_listing__map USING btree (address_dwid);
-CREATE INDEX midland_rent_listing__map_building_dwid_idx ON map_hk.midland_rent_listing__map USING btree (building_dwid);
-CREATE INDEX midland_rent_listing__map_project_dwid_idx ON map_hk.midland_rent_listing__map USING btree (project_dwid);
-CREATE INDEX midland_rent_listing__map_property_dwid_idx ON map_hk.midland_rent_listing__map USING btree (property_dwid);
-
-
-ALTER TABLE map_hk.midland_sale_listing__map ADD CONSTRAINT midland_sale_listing__map_fk_activity_dwid FOREIGN KEY (activity_dwid) REFERENCES masterdata_hk.sale_listing(activity_dwid);
-ALTER TABLE map_hk.midland_sale_listing__map ADD CONSTRAINT midland_sale_listing__map_fk_address_dwid FOREIGN KEY (address_dwid) REFERENCES masterdata_hk.address(address_dwid);
-ALTER TABLE map_hk.midland_sale_listing__map ADD CONSTRAINT midland_sale_listing__map_fk_building_dwid FOREIGN KEY (building_dwid) REFERENCES masterdata_hk.building(building_dwid);
-ALTER TABLE map_hk.midland_sale_listing__map ADD CONSTRAINT midland_sale_listing__map_fk_project_dwid FOREIGN KEY (project_dwid) REFERENCES masterdata_hk.project(project_dwid);
-ALTER TABLE map_hk.midland_sale_listing__map ADD CONSTRAINT midland_sale_listing__map_fk_property_dwid FOREIGN KEY (property_dwid) REFERENCES masterdata_hk.property(property_dwid);
-CREATE INDEX midland_sale_listing__map_activity_dwid_idx ON map_hk.midland_sale_listing__map USING btree (activity_dwid);
-CREATE INDEX midland_sale_listing__map_address_dwid_idx ON map_hk.midland_sale_listing__map USING btree (address_dwid);
-CREATE INDEX midland_sale_listing__map_building_dwid_idx ON map_hk.midland_sale_listing__map USING btree (building_dwid);
-CREATE INDEX midland_sale_listing__map_project_dwid_idx ON map_hk.midland_sale_listing__map USING btree (project_dwid);
-CREATE INDEX midland_sale_listing__map_property_dwid_idx ON map_hk.midland_sale_listing__map USING btree (property_dwid);
-
-
 --------------------------------------------------------------------------------------------
 select a.data_uuid from map_hk.midland_sale_txn__map a
 where a.activity_dwid isnull; -- 255
